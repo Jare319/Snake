@@ -1,18 +1,17 @@
-## Getting Started
+Decided to program a 'Snake' clone from scratch.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Definitely over-uses classes but oh well.
 
-## Folder Structure
+Window size and grid spacing can be changed in code, will need to add a way to do this in window later.
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+##TODO:
+• Finish the game.
+    - Apples.
+    - Steering.
+    - Wall and tail collisions.
+    - Increasing length when eating.
+• Add start/death menus.
+• Add score mechanics.
+• Probably need to implement a better timer method.
+• Implement a dynamic way to change the window and grid sizing.
+• Implement a dynamic way to change the game speed.
