@@ -4,5 +4,9 @@ import java.awt.*;
 public class App {
     public static void main(String[] args) throws Exception {
         Frame f = new Frame();
+        while(true) {
+            f.p.repaint();
+            Thread.sleep(300);
+        }
     }
 }

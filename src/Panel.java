@@ -3,11 +3,10 @@ import java.awt.*;
 
 public class Panel extends JPanel{
 
-    int stepSize = 20; //number of steps for a given frame size.
-    int lineWeight = 3;
+    Snake snake = new Snake();
 
     Panel() {
-        this.setPreferredSize(new Dimension(700,700));
+        this.setPreferredSize(new Dimension(Frame.WIDTH,Frame.HEIGHT));
     }
 
     public void paint(Graphics g) {
@@ -16,16 +15,16 @@ public class Panel extends JPanel{
         g2d.setColor(Color.black);
         g2d.fillRect(0,0,Frame.WIDTH,Frame.HEIGHT);
 
-        g2d.setColor(Color.GREEN);
-        g2d.fillRect(0, 0, Frame.WIDTH/stepSize, Frame.HEIGHT/stepSize);
+        snake.Move();
+        snake.Redraw(g2d);
 
-        g2d.setStroke(new BasicStroke(lineWeight));
+        g2d.setStroke(new BasicStroke(Frame.LINEWEIGHT));
         g2d.setColor(Color.darkGray);
 
-        for (int i = 0; i <= Frame.WIDTH; i+=(Frame.WIDTH/stepSize)) {
+        for (int i = 0; i <= Frame.WIDTH; i+=(Frame.WIDTH/Frame.STEPSIZE)) {
             g2d.drawLine(i, 0, i, Frame.HEIGHT);
         }
-        for (int i = 0; i <= Frame.HEIGHT; i+=(Frame.HEIGHT/stepSize)) {
+        for (int i = 0; i <= Frame.HEIGHT; i+=(Frame.HEIGHT/Frame.STEPSIZE)) {
             g2d.drawLine(0, i, Frame.WIDTH,i);
         }
         
