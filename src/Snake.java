@@ -5,7 +5,7 @@ public class Snake {
     Vector2 pos = new Vector2(2, 1);
     Vector2 vel = new Vector2(1, 0);
     int length = 0;
-    BodySeg[] bodySegs;
+    BodySeg[] bodySegs = new BodySeg[20];
 
     Snake() {
         
@@ -18,6 +18,9 @@ public class Snake {
 
     public void Move() {
         pos.add(vel);
+        for (int i = 0; i < bodySegs.length;i++) {
+
+        }
     }
 
 }
