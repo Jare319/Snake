@@ -7,7 +7,6 @@ public class App {
         while(true) {
             Thread.sleep(100);
             f.update();
-            //test
         }
     }
 }
