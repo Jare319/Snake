@@ -103,4 +103,13 @@ public class Vector2 {
             this.setY(limit*-1);
         }
     }
+
+    public boolean equals(Vector2 vec) {
+        if (this.x == vec.x && this.y == vec.y) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

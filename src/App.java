@@ -5,7 +5,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Frame f = new Frame();
         while(true) {
-            f.p.repaint();
+            f.update();
             Thread.sleep(300);
         }
     }

@@ -13,11 +13,13 @@ public class Frame extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setSize(WIDTH,HEIGHT);
-        
         this.getContentPane().add(p);
         pack();
-        
         this.setVisible(true);
+    }
+
+    public void update() {
+        this.p.update();
     }
     
 }
