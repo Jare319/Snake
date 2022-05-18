@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 public class Frame extends JFrame{
@@ -15,6 +16,28 @@ public class Frame extends JFrame{
         this.setSize(WIDTH,HEIGHT);
         this.getContentPane().add(p);
         pack();
+        this.addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // TODO Auto-generated method stub
+                int keyCode = e.getKeyCode();
+                p.snake.turn(keyCode);
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+
+        });
         this.setVisible(true);
     }
 
