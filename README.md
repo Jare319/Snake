@@ -6,10 +6,10 @@ Window size and grid spacing can be changed in code, will need to add a way to d
 
 ## TODO:
 * Finish the game.
-    - Apples.
-    - Steering.
-    - Wall and tail collisions.
-    - Increasing length when eating.
+    - [x] Apples.
+    - [x] Steering.
+    - [ ] Wall and tail collisions.
+    - [x] Increasing length when eating.
 * Add start/death menus.
 * Add score mechanics.
 * Probably need to implement a better timer method.
