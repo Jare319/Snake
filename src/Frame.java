@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -8,7 +7,8 @@ public class Frame extends JFrame{
     static final int HEIGHT = 700;
     static final int STEPSIZE = 20;
     static final int LINEWEIGHT = 3;
-    Panel p = new Panel();
+    Panel p = new Panel(this);
+    static boolean running = true;
     
     Frame() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,6 +43,10 @@ public class Frame extends JFrame{
 
     public void update() {
         this.p.update();
+    }
+
+    public static void gameOver() {
+        running = false;
     }
     
 }

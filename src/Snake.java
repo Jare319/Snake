@@ -21,7 +21,6 @@ public class Snake {
     public void move() {
         for (int i = bodySegs.size()-1; i > 0;i--) {
             bodySegs.get(i).pos.set(bodySegs.get(i-1).pos);
-            // System.out.println(bodySegs.get(1).pos.getX());
         }
         pos.add(vel);
         bodySegs.get(0).pos = this.pos;
@@ -29,8 +28,16 @@ public class Snake {
     }
 
     public void checkCol(Apple apple) {
-        if (this.pos.equals(apple.pos)) {
+        if (this.pos.equals(apple.pos)) { //Apple collisions
             eat();
+        }
+        if (this.pos.getX() == Frame.STEPSIZE || this.pos.getX() < 0 || this.pos.getY() < 0 || this.pos.getY() == Frame.STEPSIZE) { //Wall collisions
+            Frame.gameOver();
+        }
+        for (int i = 2; i < bodySegs.size();i++) {   //Self collisions
+            if (this.pos.equals(bodySegs.get(i).pos)) {
+                Frame.gameOver();
+            }
         }
     }
 

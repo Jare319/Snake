@@ -5,11 +5,13 @@ public class Panel extends JPanel{
 
     int maxWidth = (int) Math.floor(Frame.WIDTH/Frame.STEPSIZE);
     int maxHeight = (int) Math.floor(Frame.HEIGHT/Frame.STEPSIZE);
+    Frame f;
     Snake snake = new Snake();
-    Apple apple = new Apple((int) Math.floor(Math.random()*Frame.STEPSIZE), (int) Math.floor(Math.random()*Frame.STEPSIZE));
+    Apple apple = new Apple();
 
-    Panel() {
+    Panel(Frame f) {
         this.setPreferredSize(new Dimension(Frame.WIDTH,Frame.HEIGHT));
+        this.f = f;
     }
 
     public void paint(Graphics g) {
@@ -19,7 +21,6 @@ public class Panel extends JPanel{
         g2d.fillRect(0,0,Frame.WIDTH,Frame.HEIGHT);
 
         snake.redraw(g2d);
-    
         apple.redraw(g2d);
 
         g2d.setStroke(new BasicStroke(Frame.LINEWEIGHT));
@@ -30,6 +31,11 @@ public class Panel extends JPanel{
         for (int i = 0; i <= Frame.HEIGHT; i+=(Frame.HEIGHT/Frame.STEPSIZE)) {
             g2d.drawLine(0, i, Frame.WIDTH,i);
         }
+
+        if (!Frame.running) {
+            g2d.setColor(new Color(200,0,0,100));
+            g2d.fillRect(0,0,Frame.WIDTH,Frame.HEIGHT);
+        }
     }
 
     public void update() {
@@ -37,7 +43,6 @@ public class Panel extends JPanel{
         snake.checkCol(apple);
         apple.update(snake);
         this.repaint();
-        
     }
 
 }

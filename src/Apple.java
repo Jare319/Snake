@@ -4,9 +4,8 @@ public class Apple {
 
     Vector2 pos;
 
-    Apple(int x, int y) {
-        // this.pos = new Vector2((int) Math.floor(Math.random()*Frame.STEPSIZE), (int) Math.floor(Math.random()*Frame.STEPSIZE));
-        this.pos = new Vector2(9, 1);
+    Apple() {
+        this.pos = new Vector2((int) Math.floor(Math.random()*Frame.STEPSIZE), (int) Math.floor(Math.random()*Frame.STEPSIZE));
     }
 
     public void redraw(Graphics2D g2d) {
